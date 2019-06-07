@@ -8,7 +8,7 @@
   <script src="/build/mycomponent.js"></script>
   <style>
     html {
-      --primary-color: orangered;
+      --primary-color: green;
     }
 
     html,
@@ -36,6 +36,19 @@
     a {
       color: var(--primary-color);
       text-decoration: none;
+    }
+
+    button,
+    button:active{
+      outline: none;
+      background: transparent;
+      border:2px solid var(--primary-color);
+      color:var(--primary-color);
+      padding:0.5rem 1rem;
+      margin:1rem;
+      font-weight: bold;
+      font-size: 1.5rem;
+      cursor: pointer;
     }
   </style>
 
