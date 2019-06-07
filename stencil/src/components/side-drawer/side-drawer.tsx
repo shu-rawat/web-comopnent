@@ -17,6 +17,7 @@ export class SideDrawer {
   @Method()
   open(){
     this.opened = true;
+    this.showContact = false;
   }
 
   @Method()
@@ -44,7 +45,7 @@ export class SideDrawer {
       </div>
     }
     return [
-      <div class="backdrop"></div>,
+      <div class="backdrop" onClick={this.close.bind(this)}></div>,
       <aside>
         <header>
           <h1>{this.title}</h1>

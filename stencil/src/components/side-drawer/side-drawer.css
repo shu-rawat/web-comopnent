@@ -12,6 +12,7 @@
 
 :host([opened]) .backdrop{
   opacity: 1;
+  pointer-events: all;
 }
 
 aside{
