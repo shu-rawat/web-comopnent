@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+  <script src="/build/mycomponent.js"></script>
+  <style>
+    html {
+      --primary-color: orangered;
+    }
+
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    nav li {
+      padding: 0.5rem;
+    }
+
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body>
+  <button id="side-nav-btn">open side nav</button>
+  <cc-side-drawer title='Side Nav'>
+    <nav>
+        <h3>Navigation Tab:</h3>
+      <ul>
+        <li>
+          <a href="">link1</a>
+        </li>
+        <li>
+          <a href="">link2</a>
+        </li>
+        <li>
+          <a href="">link3</a>
+        </li>
+      </ul>
+    </nav>
+  </cc-side-drawer>
+</body>
+<script>
+  const sideNavButton = document.querySelector('#side-nav-btn');
+  const sideNav = document.querySelector('cc-side-drawer');
+
+  sideNavButton.addEventListener('click', () => {
+    if (!sideNav.opened) {
+      sideNav.open();
+    }
+  });
+</script>
+
+</html>

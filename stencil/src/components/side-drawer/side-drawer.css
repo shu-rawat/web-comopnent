@@ -1,0 +1,101 @@
+.backdrop{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top:0;
+  left:0;
+  background-color: rgba(0,0,0,0.50);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+
+:host([opened]) .backdrop{
+  opacity: 1;
+}
+
+aside{
+  position: fixed;
+  left:-100%;
+  top:0;
+  width:75%;
+  height:100vh;
+  overflow: hidden;
+  background: rgba(0,0,0,0.5);
+  color: var(--primary-color,orange);
+  transition: left 0.3s ease-out;
+}
+
+:host([opened]) aside{
+ left:0;
+}
+
+header{
+  padding: 0rem 1.5rem;
+  background: black;
+  position: relative;
+}
+
+header .close,
+header .close:active
+{
+  padding: 1rem;
+  position: absolute;
+  border: 0;
+  outline:none;
+  right:0;
+  top:0;
+  background: transparent;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+header h1{
+  margin:0px;
+  padding: 1rem 0;
+}
+
+section{
+  padding: 1.5rem;
+}
+ul{
+  margin:0;
+  padding:0;
+}
+
+li{
+  list-style-type: none;
+  padding: 0.5rem;
+}
+
+
+a{
+  color: var(--primary-color,orange);
+  text-decoration: none;
+}
+
+.tab-container{
+  display: flex;
+  justify-content: center;
+}
+
+.tab-container button,
+.tab-container button:active
+{
+  border:1px solid white;
+  color: white;
+  padding:0.5rem;
+  margin-right: 0.5rem;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.tab-container button.active{
+  border:1px solid var(--primary-color,orange);
+  background-color: var(--primary-color,orange);
+  color: white;
+}
+
+
