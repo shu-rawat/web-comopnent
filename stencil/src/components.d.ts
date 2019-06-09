@@ -12,6 +12,9 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface CcLoader {}
+  interface CcLoaderAttributes extends StencilHTMLAttributes {}
+
   interface CcSideDrawer {
     'close': () => void;
     'open': () => void;
@@ -21,6 +24,13 @@ export namespace Components {
   interface CcSideDrawerAttributes extends StencilHTMLAttributes {
     'opened'?: boolean;
     'title'?: string;
+  }
+
+  interface CcStockPrice {
+    'stockSymbol': string;
+  }
+  interface CcStockPriceAttributes extends StencilHTMLAttributes {
+    'stockSymbol'?: string;
   }
 
   interface CcToolTip {
@@ -33,20 +43,36 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'CcLoader': Components.CcLoader;
     'CcSideDrawer': Components.CcSideDrawer;
+    'CcStockPrice': Components.CcStockPrice;
     'CcToolTip': Components.CcToolTip;
   }
 
   interface StencilIntrinsicElements {
+    'cc-loader': Components.CcLoaderAttributes;
     'cc-side-drawer': Components.CcSideDrawerAttributes;
+    'cc-stock-price': Components.CcStockPriceAttributes;
     'cc-tool-tip': Components.CcToolTipAttributes;
   }
 
+
+  interface HTMLCcLoaderElement extends Components.CcLoader, HTMLStencilElement {}
+  var HTMLCcLoaderElement: {
+    prototype: HTMLCcLoaderElement;
+    new (): HTMLCcLoaderElement;
+  };
 
   interface HTMLCcSideDrawerElement extends Components.CcSideDrawer, HTMLStencilElement {}
   var HTMLCcSideDrawerElement: {
     prototype: HTMLCcSideDrawerElement;
     new (): HTMLCcSideDrawerElement;
+  };
+
+  interface HTMLCcStockPriceElement extends Components.CcStockPrice, HTMLStencilElement {}
+  var HTMLCcStockPriceElement: {
+    prototype: HTMLCcStockPriceElement;
+    new (): HTMLCcStockPriceElement;
   };
 
   interface HTMLCcToolTipElement extends Components.CcToolTip, HTMLStencilElement {}
@@ -56,12 +82,16 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'cc-loader': HTMLCcLoaderElement
     'cc-side-drawer': HTMLCcSideDrawerElement
+    'cc-stock-price': HTMLCcStockPriceElement
     'cc-tool-tip': HTMLCcToolTipElement
   }
 
   interface ElementTagNameMap {
+    'cc-loader': HTMLCcLoaderElement;
     'cc-side-drawer': HTMLCcSideDrawerElement;
+    'cc-stock-price': HTMLCcStockPriceElement;
     'cc-tool-tip': HTMLCcToolTipElement;
   }
 
